@@ -32,5 +32,5 @@
     "install": "node tools/install.js",
     "test": "node tools/test.js"
   },
-  "types": "electron-edge-js.d.ts",
+  "types": "electron-edge-js.d.ts"
 }
