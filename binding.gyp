@@ -326,7 +326,7 @@
                       'action': [
                         'bash',
                         '-c',
-                        'cd lib/bootstrap && dotnet restore'
+                        'cd lib/bootstrap && dotnet restore bootstrap.csproj'
                       ]
                     },
                     {
@@ -335,12 +335,12 @@
                         'lib/bootstrap/*.cs'
                       ],
                       'outputs': [
-                        'lib/bootstrap/bin/$(BUILDTYPE)/netcoreapp1.1/bootstrap.dll'
+                        'lib/bootstrap/bin/$(BUILDTYPE)/netcoreapp2.2/bootstrap.dll'
                       ],
                       'action': [
                         'bash',
                         '-c',
-                        'cd lib/bootstrap && dotnet build --configuration $(BUILDTYPE)'
+                        'cd lib/bootstrap && dotnet publish bootstrap.csproj -o bin/Release/netcoreapp2.2/ --self-contained --runtime osx-x64 -c $(BUILDTYPE) --framework netcoreapp2.2'
                       ]
                     }
                   ]
