@@ -68,3 +68,4 @@ tools/nuget/*.zip
 
 test-results*.*
 TemporaryGeneratedFile*.*
+dist

@@ -61,15 +61,22 @@ if (process.platform === 'win32') {
 	});
 
 	var dotnetPath = whereis('dotnet', 'dotnet.exe');
-
-	if (dotnetPath) {
+	
+	function runBootstrapBuild(runtime, onDone) {
 		spawn(dotnetPath, ['restore'], { stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') })
 			.on('close', function() {
-				spawn(dotnetPath, ['build', '--configuration', 'Release'], { stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') })
-					.on('close', function() {
-						require('./checkplatform');
-					});
+				spawn(dotnetPath,
+				['publish', '--self-contained', '-o','../../dist/bootstrap-' + runtime + '-dist', '--runtime', runtime, '-c', 'Release', '--framework', 'netcoreapp2.2'],
+				{ stdio: 'inherit', cwd: path.resolve(__dirname, '..', 'lib', 'bootstrap') }).on('close', () => {onDone()});
 			});
+	}
+
+	if (dotnetPath) {
+		runBootstrapBuild('win-x86',
+		() => runBootstrapBuild('win-x64',
+			() => { require('./checkplatform'); }
+			)
+		);
 	}
 
 	else {

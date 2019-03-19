@@ -340,7 +340,7 @@
                       'action': [
                         'bash',
                         '-c',
-                        'cd lib/bootstrap && dotnet publish bootstrap.csproj -o bin/Release/netcoreapp2.2/ --self-contained --runtime osx-x64 -c $(BUILDTYPE) --framework netcoreapp2.2'
+                        'cd lib/bootstrap && dotnet publish bootstrap.csproj -o ../../dist/bootstrap-osx-x64-dist --self-contained --runtime osx-x64 -c $(BUILDTYPE) --framework netcoreapp2.2'
                       ]
                     }
                   ]

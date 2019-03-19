@@ -1,7 +1,9 @@
 .NET and Node.js in-process on Electron
 ============
 
-*This is `electron-edge-js` fork with fixes to .net core 2.2 self-contained deployment.*
+*This is `electron-edge-js` fork with fixes to .net core 2.2 and support for self-contained deployment.*
+
+*As for now works only with .net core 2.2 + macOS/Windows*
 
 This is a fork of [edge-js](https://github.com/agracio/edge-js) adapted to support [Electron](https://github.com/electron/electron/).
 
