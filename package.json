@@ -5,7 +5,7 @@
     "email": "tomasz@janczuk.org",
     "url": "http://tomasz.janczuk.org"
   },
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fork of electron-edge-js (10.11.1) with changes to support self-contained deployment & .net core 2.2",
   "dependencies": {
     "edge-cs": "1.2.1",
