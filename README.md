@@ -15,7 +15,7 @@ Compatible with
  * Electron 3.0.x - Node.js v10.2.0.
  * Electron 4.0.4+ - Node.js v10.11.0.
 
-Usage is the same as edge or edge-js, replace `require('edge')` or `require('edge-js')` with `require('electron-edge-js')`:
+Usage is the same as edge or edge-js, replace `require('edge')` or `require('edge-js')` with `require('electron-edge-js-selfcontained')`:
 
 ```bash
 npm install electron-edge-js
@@ -23,7 +23,7 @@ npm install electron-edge-js
 
 ```diff
 -var edge = require('edge-js');
-+var edge = require('electron-edge-js');
++var edge = require('electron-edge-js-selfcontained');
 
 var helloWorld = edge.func(function () {/*
     async (input) => {
